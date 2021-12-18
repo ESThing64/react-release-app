@@ -5,29 +5,24 @@ import QuestionC from './releases/QuestionC'
 import QuestionD from './releases/QuestionD'
 import QuestionE from './releases/QuestionE'
 
+
+const QuestionABlock = (<QuestionA />)
+const QuestionBBlock = (<QuestionB />)
+const QuestionCBlock = (<QuestionC />)
+const QuestionDBlock = (<QuestionD />)
+const QuestionEBlock = (<QuestionE />)
+
+const questionTracker = 2
 function Main() {
     return (
         <div>
             {/* questionA */}
-            <QuestionA />
-            <QuestionB />
-            <QuestionC />
-            <QuestionD />
-            <QuestionE />
-            
-
-            {/* QuestionB */}
-          
-            {/* QuestionC             */}
-          
-            
-            {/* QuestionD */}
+            {(questionTracker == 1) && QuestionABlock}
+            {(questionTracker == 2) && QuestionBBlock}
+            {(questionTracker == 3) && QuestionCBlock}
+            {(questionTracker == 4) && QuestionDBlock}
+            {(questionTracker == 5) && QuestionEBlock}
            
-            {/* QuestionE */}
-          
-
-            
-
         </div>
     )
 }
