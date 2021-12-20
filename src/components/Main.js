@@ -1,4 +1,4 @@
-import React from 'react'
+import {useState} from 'react'
 import QuestionA from './releases/QuestionA'
 import QuestionB from './releases/QuestionB'
 import QuestionC from './releases/QuestionC'
@@ -6,22 +6,30 @@ import QuestionD from './releases/QuestionD'
 import QuestionE from './releases/QuestionE'
 
 
-const QuestionABlock = (<QuestionA />)
-const QuestionBBlock = (<QuestionB />)
-const QuestionCBlock = (<QuestionC />)
-const QuestionDBlock = (<QuestionD />)
-const QuestionEBlock = (<QuestionE />)
+console.log("hey bro");
 
-const questionTracker = 2
 function Main() {
+    const [questionTracker, setQuestionTracker] = useState(3);
+
+    const incrementQuestion = ()=> {
+        console.log(questionTracker);
+        
+        setQuestionTracker((questionTracker +1))
+    }
+    
+    const QuestionBBlock = (<QuestionB onClick={incrementQuestion} />)
+    const QuestionABlock = (<QuestionA onClick={incrementQuestion} />)
+    const QuestionCBlock = (<QuestionC onClick={incrementQuestion} />)
+    const QuestionDBlock = (<QuestionD onClick={incrementQuestion} />)
+    const QuestionEBlock = (<QuestionE onClick={incrementQuestion} />)
     return (
         <div>
             {/* questionA */}
-            {(questionTracker == 1) && QuestionABlock}
-            {(questionTracker == 2) && QuestionBBlock}
-            {(questionTracker == 3) && QuestionCBlock}
-            {(questionTracker == 4) && QuestionDBlock}
-            {(questionTracker == 5) && QuestionEBlock}
+            {(questionTracker === 1) && <QuestionA onClick={incrementQuestion} />}
+            {(questionTracker === 2) && <QuestionB onClick={incrementQuestion} />}
+            {(questionTracker === 3) && <QuestionC onCick={incrementQuestion} />}
+            {(questionTracker === 4) && <QuestionD onClick={incrementQuestion} />}
+            {(questionTracker === 5) && <QuestionE onClick={incrementQuestion} />}
            
         </div>
     )

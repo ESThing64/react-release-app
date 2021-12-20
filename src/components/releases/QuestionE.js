@@ -1,12 +1,12 @@
 import React from 'react'
 
-function QuestionE() {
+function QuestionE(props) {
     return (
         <div>
               <h2>When?</h2>
-            <button>Now</button>
-            <button>Not now</button>
-            <button>Never!</button>
+            <button onClick={props.incrementQuestion} >Now</button>
+            <button onClick={props.incrementQuestion} >Not now</button>
+            <button onClick={props.incrementQuestion} >Never!</button>
         </div>
     )
 }

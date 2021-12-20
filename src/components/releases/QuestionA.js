@@ -1,11 +1,11 @@
 import React from 'react'
 
-function QuestionA() {
+function QuestionA(props) {
     return (
         <div>
             <h2 className='question'>What is my now feeling about this topic ?</h2>
             <input type="text"></input>
-            <button>continue</button>
+            <button onClick={props.incrementQuestion} >continue</button>
         </div>
     )
 }
